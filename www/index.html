@@ -1,0 +1,89 @@
+<!--
+//
+//  index.html
+//  MonacaFirstApp
+//
+//  Created by Natsumo Ikeda on 2016/07/01.
+//  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
+//
+-->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/cssua.min.js"></script>
+    <script src="js/tapGame.js"></script>
+    <script src="js/ranking.js"></script>
+</head>
+<body>
+    <!-- ゲーム画面 -->
+    <div data-role="page" id="list-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1></h1>
+                <!--<a href="#ranking-page" id="ranking" class="ui-btn-right" onclick="toRanking()">ランキングを見る</a>-->
+        </div>
+        <div data-role="content">
+            <form name="gameForm">
+                <input type="button" value="ランキングを見る" name="ranking" onclick="toRanking()" />
+                <center>
+                    <h1>連打アプリ</h1>
+                </center>
+                <div align="right">
+                    <font size="6"><strong>0</strong></font>
+                </div>
+                <center>
+                    <img src="mato.png" width="250" height="250" alt="mato" onClick="tapCount()"><br/><br/>
+                    <p>↓スタートボタンを押してゲームスタート↓</p>
+                    <input type="button" value="Start" name="start" onclick="startGame()"/>
+                </center>
+            </form>
+        </div>           
+    </div>
+    
+    <!-- ランキング画面 -->
+    <div data-role="page" id="ranking-page">
+        <div data-role="header" data-position="fixed" data-theme="c">
+            <h1></h1>
+            <a href="#list-page" data-icon="back" class="ui-btn-left">戻る</a>
+        </div>
+        <div data-role="content">
+            <center>
+                <h1>ランキング</h1><br />
+                <table id="rankingTable" border="1" width="90%" cellspacing="1" cellpadding="5">
+                    <tr>
+                        <td align="right" nowrap>１位</td>
+                        <td id= "name_1" align="center" width="200">no data</td>
+                        <td id= "score_1"align="center" width="150">-</td>
+                    </tr>
+                    <tr>
+                        <td align="right" nowrap>２位</td>
+                        <td id = "name_2" align="center" width="200">no data</td>
+                        <td id = "name_2" align="center" width="150">-</td>
+                    </tr>
+                    <tr>
+                        <td align="right" nowrap>３位</td>
+                        <td id = "name_3" align="center" width="200">no data</td>
+                        <td id = "name_3" align="center" width="150">-</td>
+                    </tr>
+                    <tr>
+                        <td align="right" nowrap>４位</td>
+                        <td id = "name_4" align="center" width="200">no data</td>
+                        <td id = "name_4" align="center" width="150">-</td>
+                    </tr>
+                    <tr>
+                        <td align="right" nowrap>５位</td>
+                        <td id = "name_5" align="center" width="200">no data</td>
+                        <td id = "name_5" align="center" width="150">-</td>
+                    </tr>
+                </table> 
+            </center>
+        </div>
+    </div>
+</body>
+</html>

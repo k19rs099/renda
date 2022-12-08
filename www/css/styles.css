@@ -1,0 +1,8 @@
+/* set padding for iOS status bar */
+.ua-ios .ui-page {
+    padding-top: 63px !important;
+}
+
+.ua-ios .ui-header {
+    top: 20px;
+}

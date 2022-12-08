@@ -1,0 +1,17 @@
+{
+    "framework_version": "3.5",
+    "xcode_version": "12.5.1",
+    "cordova_version": "10.0",
+    "title-ja": "MonacaFirstApp",
+    "title-en": "",
+    "description-ja": "【Monaca問題集】『オンラインランキング機能を作ってみよう！「連打ゲーム」』",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+        "android",
+        "ios"
+    ],
+    "name": "generated-1467348192-57722d9afd17346325799376",
+    "cordova_ios_platform": "6.1.1",
+    "cordova_android_platform": "9.0.0"
+}
