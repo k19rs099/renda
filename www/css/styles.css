@@ -6,3 +6,6 @@
 .ua-ios .ui-header {
     top: 20px;
 }
+function main() {
+$("#disp1").css("background-color", "lightgrey");
+}
