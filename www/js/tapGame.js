@@ -19,7 +19,9 @@ var countTimer = 13;
 var counter = 0;
 // 「tapFlag」的のタップ可否設定
 var tapFlag = false;
-
+var audio = new Audio();
+audio.src = "pin.wav";
+audio.play();
 // 「Start」ボタン押下時の処理
 function startGame() {
     // ボタンの無効化
