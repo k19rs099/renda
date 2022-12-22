@@ -16,12 +16,21 @@ var ncmb = new NCMB(this.APPLICATION_KEY, this.CLIENT_KEY);
 // タイマー設定
 var countTimer = 13;
 // タップ回数カウンター
-var counter = 0;
+var counter = 100;
 // 「tapFlag」的のタップ可否設定
 var tapFlag = false;
-var audio = new Audio();
-audio.src = "pin.wav";
-audio.play();
+function alarm(){
+    var canvas = $("#mycanvas")[0];
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    img.src = "ksuisbg.gif";
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, 300, 300);
+    };
+    var audio = new Audio();
+    audio.src = "pin.wav";
+    audio.play();
+}
 // 「Start」ボタン押下時の処理
 function startGame() {
     // ボタンの無効化
@@ -29,7 +38,7 @@ function startGame() {
     document.gameForm.ranking.disabled = true;
 
     // タップカウンターリセット
-    this.counter = 0;
+    this.counter = 100;
     $("#list-page strong").html(String(0));
     // タイマーリセット
     this.countTimer = 13;
@@ -69,6 +78,7 @@ function countTime(time) {
         } else if (time == 10) {
             this.tapFlag = true;
             $("#list-page p").html("スタート！");
+            
         } else {
             this.tapFlag = true;
             $("#list-page p").html(String(time));
@@ -80,6 +90,7 @@ function countTime(time) {
         this.tapFlag = false;
         $("#list-page p").html("タイムアップ！");
         imputName(this.counter);
+        
     }
 }
 
@@ -92,7 +103,7 @@ function imputName(count) {
     } else {
         // スコアと入力した名前を保存
         saveScore(name, count);
-        $("#list-page p").html(name + "さんのスコアは" + String(count) + "連打でした");
+        $("#list-page p").html(name + "さんのスコアは" + String(count) + "でした");
     }
     // ボタンの有効化
     document.gameForm.start.disabled = false;
@@ -102,7 +113,7 @@ function imputName(count) {
 // タップ数カウント
 function tapCount() {
     if (tapFlag) {
-        this.counter += 1;
+        this.counter -= 1;
         $("#list-page strong").html(String(this.counter));
     }
 }

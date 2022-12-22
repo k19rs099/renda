@@ -20,7 +20,7 @@ function checkRanking() {
     // 保存先クラスを作成
     var highScore = ncmb.DataStore("GameScore");
     // scoreの降順でデータ
-    highScore.order("score", true)
+    highScore.order("score", false)
         .limit(5).fetchAll()
         .then(function (results) {
             // 検索に成功した場合の処理
@@ -32,16 +32,6 @@ function checkRanking() {
             // 検索に失敗した場合の処理
             console.log("検索に失敗しました。エラー:" + error);
         });
-
-
-
-
-
-
-
-
-
-
     // ******************************************************
 }
 
@@ -54,7 +44,7 @@ function setData(array) {
         name.innerHTML = array[i].name + "さん";
         // スコアの設定
         var score = table.rows[i].cells[2];
-        score.innerHTML = array[i].score + "連打";
+        score.innerHTML = array[i].score;
     }
 }
 
